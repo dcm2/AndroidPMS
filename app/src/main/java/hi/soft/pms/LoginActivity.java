@@ -6,12 +6,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 public class LoginActivity extends AppCompatActivity {
 
     private Button mLoginButton;
     private EditText mUserNameField;
     private EditText mPasswordField;
+    private TextView mGotoRegistration;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,9 +36,19 @@ public class LoginActivity extends AppCompatActivity {
                 Intent i = PlaylistOverviewActivity.newIntent(LoginActivity.this, currentUser);
                 i.putExtra("user", currentUser);
                 startActivity(i);
-
             }
         });
+
+        mGotoRegistration = findViewById(R.id.login_goto_registration);
+        mGotoRegistration.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent gotoRegistration = new Intent(LoginActivity.this, CreateAccountActivity.class);
+                startActivity(gotoRegistration);
+            }
+        });
+
+
     }
 
     public User createUser(String userName, String psswd){

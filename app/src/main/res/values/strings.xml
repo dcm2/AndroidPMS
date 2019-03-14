@@ -1,9 +1,18 @@
 <resources>
     <string name="app_name">PMS</string>
+
     <string name="login_hint_username">username</string>
     <string name="login_hint_password">password</string>
-    <string name="login_login_button">Log in</string>
-    <string name="login_goto_registration_1">do not have an account yet?</string>
-    <string name="login_goto_registration_link"> REGISTER</string>
+    <string name="login_login_button">Log In</string>
+    <string name="login_goto_registration_text">do not have an account yet?</string>
+    <string name="login_goto_registration_link">REGISTER</string>
+
+    <string name="create_email">email</string>
+    <string name="create_username">username</string>
+    <string name="create_password">password</string>
+    <string name="create_confirm_password">confirm password</string>
+    <string name="create_create_button">Sign Up</string>
+    <string name="create_goto_login_text">oops, already have an account</string>
+    <string name="title_activity_create_account">CreateAccountActivity</string>
 
 </resources>
