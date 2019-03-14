@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">PMS</string>
+    <string name="login_hint_username">username</string>
+    <string name="login_hint_password">password</string>
+    <string name="login_login_button">Log in</string>
+    <string name="login_goto_registration_1">do not have an account yet?</string>
+    <string name="login_goto_registration_link"> REGISTER</string>
+
+</resources>
