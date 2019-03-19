@@ -15,4 +15,6 @@
     <string name="create_goto_login_text">oops, already have an account</string>
     <string name="title_activity_create_account">CreateAccountActivity</string>
 
+    <string name="overview_your_playlists">Your Playlists</string>
+
 </resources>

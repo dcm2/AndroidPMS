@@ -1,60 +1,64 @@
 package hi.soft.pms;
 
-import android.os.Parcelable;
-
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.UUID;
 
 public class User implements Serializable {
 
     private static final long serialVersionUID = 5177222050535318633L;
 
-    private String userName;
-    private String password;
-    private String email;
+    private UUID mId;
+    private String mUserName;
+    private String mPassword;
+    private String mEmail;
+    private ArrayList<Playlist> mPlaylists = new ArrayList<>();
 
 
     public User(){
+        mId = UUID.randomUUID();
     }
 
     public User(String userName, String password){
-        this.userName = userName;
-        this.password = password;
+        mId = UUID.randomUUID();
+        this.mUserName = userName;
+        this.mPassword = password;
     }
 
     public User(String userName, String password, String email){
-        this.userName = userName;
-        this.password = password;
-        this.email = email;
+        this.mUserName = userName;
+        this.mPassword = password;
+        this.mEmail = email;
     }
 
     public String getUserName() {
-        return userName;
+        return mUserName;
     }
 
     public void setUserName(String userName) {
-        this.userName = userName;
+        this.mUserName = userName;
     }
 
     public String getPassword() {
-        return password;
+        return mPassword;
     }
 
     public void setPassword(String password) {
-        this.password = password;
+        this.mPassword = password;
     }
 
     public String getEmail() {
-        return email;
+        return mEmail;
     }
 
     public void setEmail(String email) {
-        this.email = email;
+        this.mEmail = email;
     }
 
     //for debugging purposes
     @Override
     public String toString() {
-        return "User -> userName=" + userName + ", password=" + password + ", email=" + email
+        return "User -> userName=" + mUserName + "ID=" + mId + ", password=" + mPassword + ", email=" + mEmail
                 + ", playlists=";
     }
 }

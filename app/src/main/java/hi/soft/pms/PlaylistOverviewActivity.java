@@ -11,6 +11,7 @@ public class PlaylistOverviewActivity extends AppCompatActivity {
     private static final String CURRENT_USER = null;
     private User mCurrentUser;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

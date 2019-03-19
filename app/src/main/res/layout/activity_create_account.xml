@@ -38,7 +38,7 @@
         android:hint="@string/create_confirm_password"
         android:textColorHint="@color/colorPrimaryDark"/>
     <Button
-        android:id="@+id/create_button"
+        android:id="@+id/user_creation_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
