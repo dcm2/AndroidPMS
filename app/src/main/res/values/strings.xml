@@ -14,6 +14,7 @@
     <string name="create_create_button">Sign Up</string>
     <string name="create_goto_login_text">oops, already have an account</string>
     <string name="title_activity_create_account">CreateAccountActivity</string>
+    <string name="password_mismatch">Entered passwords do not match</string>
 
     <string name="overview_your_playlists">Your Playlists</string>
 

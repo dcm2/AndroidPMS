@@ -15,30 +15,34 @@
         android:layout_height="40dp"
         android:layout_marginTop="180dp"
         android:hint="@string/create_email"
-        android:textColorHint="@color/colorPrimaryDark"/>
+        android:textColorHint="@color/colorPrimaryDark"
+        android:inputType="textEmailAddress|textNoSuggestions"/>
     <EditText
         android:id="@+id/create_username"
         android:layout_width="280dp"
         android:layout_height="40dp"
         android:layout_marginTop="10dp"
         android:hint="@string/create_username"
-        android:textColorHint="@color/colorPrimaryDark"/>
+        android:textColorHint="@color/colorPrimaryDark"
+        android:inputType="text|textNoSuggestions"/>
     <EditText
         android:id="@+id/create_password"
         android:layout_width="280dp"
         android:layout_height="40dp"
         android:layout_marginTop="10dp"
         android:hint="@string/create_password"
-        android:textColorHint="@color/colorPrimaryDark"/>
+        android:textColorHint="@color/colorPrimaryDark"
+        android:inputType="textNoSuggestions|textPassword"/>
     <EditText
         android:id="@+id/create_confirm_password"
         android:layout_width="280dp"
         android:layout_height="40dp"
         android:layout_marginTop="10dp"
         android:hint="@string/create_confirm_password"
-        android:textColorHint="@color/colorPrimaryDark"/>
+        android:textColorHint="@color/colorPrimaryDark"
+        android:inputType="textNoSuggestions|textPassword"/>
     <Button
-        android:id="@+id/user_creation_button"
+        android:id="@+id/create_signup_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"

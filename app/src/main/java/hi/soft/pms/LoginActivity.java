@@ -31,7 +31,8 @@ public class LoginActivity extends AppCompatActivity {
                 String user = mUserNameField.getText().toString();
                 String psswd = mPasswordField.getText().toString();
 
-                User currentUser = createUser(user, psswd);
+                User currentUser = new User(user, psswd);
+
 
                 Intent i = PlaylistOverviewActivity.newIntent(LoginActivity.this, currentUser);
                 i.putExtra("user", currentUser);
@@ -50,10 +51,4 @@ public class LoginActivity extends AppCompatActivity {
 
 
     }
-
-    public User createUser(String userName, String psswd){
-        User currentUser = new User(userName, psswd);
-        return currentUser;
-    }
-
 }

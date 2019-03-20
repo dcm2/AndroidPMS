@@ -15,9 +15,10 @@ public class Playlist {
     private ArrayList<User> mUsersList = new ArrayList<>();
 
     //Constructor
-    public Playlist(String playlistName){
+    public Playlist(String playlistName, User creator){
         mId = UUID.randomUUID();
         this.mPlaylistName = playlistName;
+        this.mCreator = creator;
     }
 
     public UUID getId() {
@@ -74,5 +75,11 @@ public class Playlist {
 
     public void setUsersList(ArrayList<User> usersList) {
         mUsersList = usersList;
+    }
+
+    //for debugging purposes
+    @Override
+    public String toString() {
+        return "name= " + mPlaylistName + ", creator= " + mCreator.getUserName();
     }
 }

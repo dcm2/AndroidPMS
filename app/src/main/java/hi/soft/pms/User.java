@@ -26,9 +26,18 @@ public class User implements Serializable {
     }
 
     public User(String userName, String password, String email){
+        mId = UUID.randomUUID();
         this.mUserName = userName;
         this.mPassword = password;
         this.mEmail = email;
+    }
+
+    public UUID getId() {
+        return mId;
+    }
+
+    public void setId(UUID id) {
+        mId = id;
     }
 
     public String getUserName() {
@@ -55,11 +64,19 @@ public class User implements Serializable {
         this.mEmail = email;
     }
 
+    public ArrayList<Playlist> getPlaylists() {
+        return mPlaylists;
+    }
+
+    public void setPlaylists(ArrayList<Playlist> playlists) {
+        mPlaylists = playlists;
+    }
+
     //for debugging purposes
     @Override
     public String toString() {
-        return "User -> userName=" + mUserName + "ID=" + mId + ", password=" + mPassword + ", email=" + mEmail
-                + ", playlists=";
+        return "userName= " + mUserName + ", ID= " + mId + ", password= " + mPassword + ", email= " + mEmail
+                + ", playlists= " + mPlaylists.toString();
     }
 }
 
