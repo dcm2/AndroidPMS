@@ -9,6 +9,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import hi.soft.pms.model.Playlist;
+import hi.soft.pms.model.User;
+
 public class PlaylistOverviewActivity extends AppCompatActivity {
 
     private static final String CURRENT_USER = null;

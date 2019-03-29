@@ -1,4 +1,4 @@
-package hi.soft.pms;
+package hi.soft.pms.model;
 
 import java.util.UUID;
 

@@ -14,7 +14,11 @@
     <string name="create_create_button">Sign Up</string>
     <string name="create_goto_login_text">oops, already have an account</string>
     <string name="title_activity_create_account">CreateAccountActivity</string>
-    <string name="password_mismatch">Entered passwords do not match</string>
+
+    <string name="invalid_email">Please enter a valid email</string>
+    <string name="invalid_userName">Your username has to be 5 to 20 alphanumeric characters long</string>
+    <string name="invalid_password">Your password has to be 8 to 10 characters long AND do not contain spaces</string>
+    <string name="password_mismatch">Your passwords do not match</string>
 
     <string name="overview_your_playlists">Your Playlists</string>
 

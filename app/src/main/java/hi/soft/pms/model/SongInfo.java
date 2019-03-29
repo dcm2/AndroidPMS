@@ -1,7 +1,9 @@
-package hi.soft.pms;
+package hi.soft.pms.model;
 
 import java.util.ArrayList;
 import java.util.UUID;
+
+import hi.soft.pms.model.Song;
 
 public class SongInfo {
 

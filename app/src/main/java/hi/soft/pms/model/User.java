@@ -1,8 +1,10 @@
-package hi.soft.pms;
+package hi.soft.pms.model;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.UUID;
+
+import hi.soft.pms.model.Playlist;
 
 public class User implements Serializable {
 
