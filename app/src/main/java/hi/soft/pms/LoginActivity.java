@@ -90,7 +90,11 @@ public class LoginActivity extends AppCompatActivity {
             String enteredPassword = mPasswordField.getText().toString();
 
             if(validation(enteredUserName, enteredPassword, prospectUser)){
-                System.out.println("yup :) you have access");
+                //System.out.println("yup :) you have access");
+
+                Intent i = new Intent(LoginActivity.this, PlaylistOverviewActivity.class);
+                i.putExtra("currentUser", enteredUserName);
+                startActivity(i);
             }
         }
     }

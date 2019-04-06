@@ -1,5 +1,7 @@
 package hi.soft.pms.model;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.util.ArrayList;
 import java.util.UUID;
 
@@ -7,20 +9,23 @@ import hi.soft.pms.model.Song;
 
 public class SongInfo {
 
-    private UUID mId;
+    @SerializedName(value = "id")
+    private Long mId;
+    @SerializedName(value = "title")
     private String mTitle;
+    @SerializedName(value = "artist")
     private String mArtist;
+    @SerializedName(value = "album")
     private String mAlbum;
+    @SerializedName(value = "length")
     private int mDuration;
+    @SerializedName(value = "genre")
     private String mGenre;
-    private ArrayList<Song> mUsedBySong = new ArrayList<>();
+    //private ArrayList<Song> mUsedBySong = new ArrayList<>();
 
     //Two constructors (may not be necessary but we have these for now, susceptible to be changed)
-    public SongInfo(){
-        mId = UUID.randomUUID();
-    }
+    public SongInfo(){ }
     public SongInfo(String title, String artist, String album, int duration, String genre){
-        mId = UUID.randomUUID();
         this.mTitle = title;
         this.mArtist = artist;
         this.mAlbum = album;
@@ -28,11 +33,11 @@ public class SongInfo {
         this.mGenre = genre;
     }
 
-    public UUID getId() {
+    public Long getId() {
         return mId;
     }
 
-    public void setId(UUID id) {
+    public void setId(Long id) {
         mId = id;
     }
 
@@ -76,11 +81,11 @@ public class SongInfo {
         mGenre = genre;
     }
 
-    public ArrayList<Song> getUsedBySong() {
+    /*public ArrayList<Song> getUsedBySong() {
         return mUsedBySong;
-    }
+    }*/
 
-    public void setUsedBySong(ArrayList<Song> usedBySong) {
+    /*public void setUsedBySong(ArrayList<Song> usedBySong) {
         mUsedBySong = usedBySong;
-    }
+    }*/
 }

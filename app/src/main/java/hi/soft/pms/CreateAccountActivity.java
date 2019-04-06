@@ -141,8 +141,14 @@ public class CreateAccountActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
+            //System.out.println(":)");
 
-            System.out.println(":)");
+            String userName = mUserName.getText().toString();
+
+            Intent i = new Intent(CreateAccountActivity.this, PlaylistOverviewActivity.class);
+            i.putExtra("currentUser", userName);
+            startActivity(i);
+
         }
     }
 

@@ -1,31 +1,37 @@
 package hi.soft.pms.model;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.util.UUID;
 
 public class Song {
 
-    private UUID mId;
+    @SerializedName(value = "id")
+    private Long mId;
+    @SerializedName(value = "songInfo")
     private SongInfo mSongInfo;
+    @SerializedName(value = "belongsTo")
     private Playlist mBelongsTo;
+    @SerializedName(value = "title")
     private String mTitle;
+    @SerializedName(value = "upVotes")
     private int mUpVotes;
+    @SerializedName(value = "downVotes")
     private int mDownVotes;
+    @SerializedName(value = "votes")
     private int mTotalVotes;
 
     //Two constructors (may not be necessary but we have these for now, susceptible to be changed)
-    public Song(){
-        this.mId = UUID.randomUUID();
-    }
+    public Song(){ }
     public Song(SongInfo songInfo){
-        mId = UUID.randomUUID();
         this.mSongInfo = songInfo;
     }
 
-    public UUID getId() {
+    public Long getId() {
         return mId;
     }
 
-    public void setId(UUID id) {
+    public void setId(Long id) {
         mId = id;
     }
 

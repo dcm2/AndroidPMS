@@ -1,31 +1,37 @@
 package hi.soft.pms.model;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.util.ArrayList;
 import java.util.UUID;
 
 public class Playlist {
 
-
-    private UUID mId;
+    @SerializedName(value = "id")
+    private Long mId;
+    @SerializedName(value = "title")
     private String mPlaylistName;
+    @SerializedName(value = "creator")
     private User mCreator;
+    @SerializedName(value = "songList")
     private ArrayList<Song> mSongList = new ArrayList<>();
+    @SerializedName(value = "numSongs")
     private int mNumberSongs;
+    @SerializedName(value = "duration")
     private int mDuration;
-    private ArrayList<User> mUsersList = new ArrayList<>();
+    //private ArrayList<User> mUsersList = new ArrayList<>();
 
     //Constructor
     public Playlist(String playlistName, User creator){
-        mId = UUID.randomUUID();
         this.mPlaylistName = playlistName;
         this.mCreator = creator;
     }
 
-    public UUID getId() {
+    public Long getId() {
         return mId;
     }
 
-    public void setId(UUID id) {
+    public void setId(Long id) {
         mId = id;
     }
 
@@ -69,13 +75,13 @@ public class Playlist {
         mDuration = duration;
     }
 
-    public ArrayList<User> getUsersList() {
+    /*public ArrayList<User> getUsersList() {
         return mUsersList;
-    }
+    }*/
 
-    public void setUsersList(ArrayList<User> usersList) {
+    /*public void setUsersList(ArrayList<User> usersList) {
         mUsersList = usersList;
-    }
+    }*/
 
     //for debugging purposes
     @Override

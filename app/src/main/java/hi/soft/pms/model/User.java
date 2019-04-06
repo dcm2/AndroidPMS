@@ -1,5 +1,7 @@
 package hi.soft.pms.model;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.UUID;
@@ -8,37 +10,38 @@ import hi.soft.pms.model.Playlist;
 
 public class User implements Serializable {
 
-    private static final long serialVersionUID = 5177222050535318633L;
+    //private static final long serialVersionUID = 5177222050535318633L;
 
-    private UUID mId;
+    @SerializedName(value = "id")
+    private Long mId;
+    @SerializedName(value = "userName")
     private String mUserName;
+    @SerializedName(value = "password")
     private String mPassword;
+    @SerializedName(value = "email")
     private String mEmail;
+    @SerializedName(value = "playlists")
     private ArrayList<Playlist> mPlaylists = new ArrayList<>();
 
 
-    public User(){
-        mId = UUID.randomUUID();
-    }
+    public User(){ }
 
     public User(String userName, String password){
-        mId = UUID.randomUUID();
         this.mUserName = userName;
         this.mPassword = password;
     }
 
     public User(String userName, String password, String email){
-        mId = UUID.randomUUID();
         this.mUserName = userName;
         this.mPassword = password;
         this.mEmail = email;
     }
 
-    public UUID getId() {
+    public Long getId() {
         return mId;
     }
 
-    public void setId(UUID id) {
+    public void setId(Long id) {
         mId = id;
     }
 
