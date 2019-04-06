@@ -6,10 +6,14 @@ import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import hi.soft.pms.fetchers.PlaylistFetcher;
@@ -22,6 +26,7 @@ public class PlaylistOverviewActivity extends AppCompatActivity {
     private String mCurrentUser;
     private Button mCreatePlaylistButton;
     private EditText mPlaylistName;
+    private ListView mListView;
 
 
     @Override
@@ -34,13 +39,9 @@ public class PlaylistOverviewActivity extends AppCompatActivity {
         //just to check is is all fine here
         Toast.makeText(PlaylistOverviewActivity.this, mCurrentUser, Toast.LENGTH_LONG).show();
 
+
         PlaylistRequest playlistRequestTask = new PlaylistRequest();
         playlistRequestTask.execute(mCurrentUser);
-
-
-
-
-
 
 
 
@@ -78,11 +79,33 @@ public class PlaylistOverviewActivity extends AppCompatActivity {
         protected void onPostExecute(List<Playlist> playlists) {
             super.onPostExecute(playlists);
 
-            System.out.println("done with the test! Check the following results");
+            //test: creates a new ArrayList<String> with just playlists names
+
+            final ArrayList<String> playlistNamesArray = new ArrayList<>();
+            for(int i = 0; i < playlists.size(); i++) {
+                playlistNamesArray.add(playlists.get(i).getPlaylistName());
+            }
+
+
+            //creates listView to display
+            mListView = findViewById(R.id.list_to_display);
+            ArrayAdapter<String> arrayAdapter = new ArrayAdapter(PlaylistOverviewActivity.this, android.R.layout.simple_list_item_1, playlistNamesArray);
+            mListView.setAdapter(arrayAdapter);
+
+            mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    Toast.makeText(PlaylistOverviewActivity.this, "playlist: " + playlistNamesArray.get(position), Toast.LENGTH_LONG).show();
+                }
+            });
+
+
+
+            /*System.out.println("done with the test! Check the following results");
 
             for(int i = 0; i < playlists.size(); i++) {
                 System.out.println(playlists.get(i));
-            }
+            }*/
 
         }
     }
