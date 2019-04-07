@@ -21,7 +21,7 @@ public class UserRegistration {
 
         try {
 
-            //create the jsonObject to sent
+            //create the jsonObject to send
             JSONObject jUserToPost = new JSONObject();
 
             jUserToPost.put("userName", userNameToPost);

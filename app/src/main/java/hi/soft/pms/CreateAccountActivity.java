@@ -66,28 +66,6 @@ public class CreateAccountActivity extends AppCompatActivity {
             }
         });
 
-        /*mSignUpButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                String email = mEmail.getText().toString();
-                String userName = mUserName.getText().toString();
-                String psswd = mPassword.getText().toString();
-                String psswdConfirmation = mPasswordConfirmation.getText().toString();
-
-                if (psswd.equals(psswdConfirmation)) {
-
-                    User currentUser = new User(userName, psswd, email);
-
-                    Intent i = PlaylistOverviewActivity.newIntent(CreateAccountActivity.this, currentUser);
-                    i.putExtra("user", currentUser);
-                    startActivity(i);
-                } else {
-                    Toast.makeText(CreateAccountActivity.this, getResources().getString(R.string.password_mismatch), Toast.LENGTH_LONG).show();
-                }
-            }
-        });*/
-
         mGotoLogin = findViewById(R.id.create_goto_login);
         mGotoLogin.setOnClickListener(new View.OnClickListener() {
             @Override

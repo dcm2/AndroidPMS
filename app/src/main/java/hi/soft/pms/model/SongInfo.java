@@ -2,10 +2,6 @@ package hi.soft.pms.model;
 
 import com.google.gson.annotations.SerializedName;
 
-import java.util.ArrayList;
-import java.util.UUID;
-
-import hi.soft.pms.model.Song;
 
 public class SongInfo {
 

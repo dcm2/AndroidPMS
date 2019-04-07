@@ -4,13 +4,9 @@ import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.UUID;
 
-import hi.soft.pms.model.Playlist;
 
 public class User implements Serializable {
-
-    //private static final long serialVersionUID = 5177222050535318633L;
 
     @SerializedName(value = "id")
     private Long mId;

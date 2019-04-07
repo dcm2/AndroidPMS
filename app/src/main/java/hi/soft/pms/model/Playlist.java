@@ -22,9 +22,8 @@ public class Playlist {
     //private ArrayList<User> mUsersList = new ArrayList<>();
 
     //Constructor
-    public Playlist(String playlistName, User creator){
+    public Playlist(String playlistName){
         this.mPlaylistName = playlistName;
-        this.mCreator = creator;
     }
 
     public Long getId() {

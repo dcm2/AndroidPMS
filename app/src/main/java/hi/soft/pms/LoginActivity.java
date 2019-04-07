@@ -37,26 +37,6 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-
-
-        /*mLoginButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                String user = mUserNameField.getText().toString();
-                String psswd = mPasswordField.getText().toString();
-
-                User currentUser = new User(user, psswd);
-
-
-                Intent i = PlaylistOverviewActivity.newIntent(LoginActivity.this, currentUser);
-                i.putExtra("user", currentUser);
-                startActivity(i);
-
-
-            }
-        });*/
-
         mGotoRegistration = findViewById(R.id.login_goto_registration);
         mGotoRegistration.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,7 +51,7 @@ public class LoginActivity extends AppCompatActivity {
         return ((enteredUserName.equals(prospectUser.getUserName()))&&(enteredPassword.equals(prospectUser.getPassword())));
     }
 
-    //here goes the definition of the AsyncTask that gets the User to compare credentials!
+    //class definition of the AsyncTask that gets the User to compare credentials!
     private class UserRequest extends AsyncTask<String, Void, User>{
 
         @Override
@@ -90,8 +70,7 @@ public class LoginActivity extends AppCompatActivity {
             String enteredPassword = mPasswordField.getText().toString();
 
             if(validation(enteredUserName, enteredPassword, prospectUser)){
-                //System.out.println("yup :) you have access");
-
+                //creates intent to go to next activity
                 Intent i = new Intent(LoginActivity.this, PlaylistOverviewActivity.class);
                 i.putExtra("currentUser", enteredUserName);
                 startActivity(i);
