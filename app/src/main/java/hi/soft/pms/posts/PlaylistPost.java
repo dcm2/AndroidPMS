@@ -18,7 +18,7 @@ public class PlaylistPost {
     public void playlistPost(String userName, String playlistName) throws IOException {
 
         //initiates the connection with the db through http
-        String path = BASE_URL + userName + "/playlists";
+        String path = BASE_URL + "/" + userName + "/playlists";
 
         URL url = new URL(path);
         HttpURLConnection conn = (HttpURLConnection) url.openConnection();
