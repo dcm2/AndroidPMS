@@ -1,7 +1,9 @@
 package hi.soft.pms;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import android.support.v7.app.AppCompatActivity;
@@ -15,6 +17,7 @@ import android.widget.Toast;
 
 import hi.soft.pms.fetchers.SongsFetcher;
 import hi.soft.pms.model.Song;
+import hi.soft.pms.posts.VotePost;
 
 public class PlaylistDetailActivity extends AppCompatActivity {
 
@@ -69,6 +72,11 @@ public class PlaylistDetailActivity extends AppCompatActivity {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                     Toast.makeText(PlaylistDetailActivity.this, "I want to Upvote: " + songsArray.get(position), Toast.LENGTH_LONG).show();
+
+                    VotingSystem votingSystemTask = new VotingSystem();
+                    votingSystemTask.execute("1", mCurrentUser, mCurrentPlaylist, songsArray.get(position));
+
+
                 }
             });
 
@@ -76,10 +84,36 @@ public class PlaylistDetailActivity extends AppCompatActivity {
                 @Override
                 public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
                     Toast.makeText(PlaylistDetailActivity.this, "I want to Downvote: " + songsArray.get(position), Toast.LENGTH_LONG).show();
+
+                    VotingSystem votingSystemTask = new VotingSystem();
+                    votingSystemTask.execute("-1", mCurrentUser, mCurrentPlaylist, songsArray.get(position));
+
                     return true;
                 }
             });
 
+        }
+    }
+
+    //class definition of the AsyncTask that calls the POST request on the server to allow voting system
+    private class VotingSystem extends AsyncTask<String, Void, Void>{
+
+        @Override
+        protected Void doInBackground(String... strings) {
+
+            String vote = strings[0];
+            String userName = strings[1];
+            String playlistTitle = strings[2];
+            String songTitle = strings[3];
+
+
+            try {
+                new VotePost().postThisVote(vote, userName, playlistTitle, songTitle);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            return null;
         }
     }
 
