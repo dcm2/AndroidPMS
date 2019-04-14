@@ -46,24 +46,6 @@ public class PlaylistOverviewActivity extends AppCompatActivity {
         playlistRequestTask.execute(mCurrentUser);
 
 
-
-
-        /*To test how to recover the User attached to the intent as an extra
-        mCurrentUser = (User) getIntent().getSerializableExtra("user");
-        Toast.makeText(PlaylistOverviewActivity.this, mCurrentUser.toString(), Toast.LENGTH_LONG).show();
-
-        mPlaylistName = findViewById(R.id.playlist_to_create);
-
-        mCreatePlaylistButton = findViewById(R.id.playlist_creation_button);
-        mCreatePlaylistButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String playlistName = mPlaylistName.getText().toString();
-                mCurrentUser.getPlaylists().add(new Playlist(playlistName, mCurrentUser));
-
-                Toast.makeText(PlaylistOverviewActivity.this, mCurrentUser.toString(), Toast.LENGTH_LONG).show();
-            }
-        });*/
     }
 
     //class definition of the AsyncTask that gets the Playlists of the current User
@@ -163,17 +145,5 @@ public class PlaylistOverviewActivity extends AppCompatActivity {
 
     }
 
-
-
-
-
-
-
-
-    /*public static Intent newIntent(Context packageContext, User user){
-        Intent i = new Intent(packageContext, PlaylistOverviewActivity.class);
-        i.putExtra(CURRENT_USER, user);
-        return i;
-    }*/
 }
 
